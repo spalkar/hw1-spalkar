@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<cpeDescription>
+   <collectionReader>
+      <collectionIterator>
+           <descriptor>
+                <import location="NERcollectionReaderDescriptor.xml"/>
+            </descriptor>
+        </collectionIterator>         	
+   </collectionReader>
+   <casProcessors casPoolSize="2" processingUnitThreadCount="1">
+    <casProcessor deployment="integrated" name="SimpleGeneAnnotator">
+         <descriptor>
+            <import location="SimpleaeDescriptor.xml"/>
+         </descriptor>
+      </casProcessor>
+    <casProcessor deployment="integrated" name="POSGeneAnnotator">
+         <descriptor>
+            <import location="POSaeDescriptor.xml"/>
+         </descriptor>
+      </casProcessor>
+      <casProcessor deployment="integrated" name="GeneCasConsumer">
+         <descriptor>
+            <import location="NERcasConsumerDescriptor.xml"/>
+         </descriptor>
+      </casProcessor>
+   </casProcessors>
+   <cpeConfig>
+    <startAt>1</startAt>
+    <numToProcess>-1</numToProcess>
+    <checkpoint batch="1000" file="" time="100000s"></checkpoint>
+    <timerImpl>org.apache.uima.internal.util.JavaTimer</timerImpl>
+    <deployAs>immediate</deployAs>
+   </cpeConfig>
+</cpeDescription>
