@@ -16,6 +16,18 @@ import org.apache.uima.util.ProgressImpl;
 
 
 public class GeneCollectionReader extends CollectionReader_ImplBase {
+
+  /*
+   * The Collection reader for the NER pipeline.
+   * 
+   * It inherits from the base implementation of the Collection Reader 
+   * and implements the abstract methods.
+   * 
+   * Reads in the input file name via a configuration parameter
+   * and extracts each sentence from the file. 
+   * Adds each sentence as a separate document in the reader.
+   * 
+   */
   
   String [] gCont;
   int currLine;

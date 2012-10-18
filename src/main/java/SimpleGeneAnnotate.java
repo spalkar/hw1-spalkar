@@ -7,6 +7,14 @@ import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.jcas.JCas;
 public class SimpleGeneAnnotate extends JCasAnnotator_ImplBase {
+  
+  /*
+   * A Simple heuristic based Gene annotator. 
+   * 
+   *  Uses a simple set of regular expressions that may indicate gene names
+   *  to tag words in the current document as named entities. 
+   * 
+   */
 
   private String [] patRules = {"[A-Z][a-z0-9]*", "[A-Z0-9-]*", "[A-Za-z0-9-]*[0-9]", "[0-9][A-Za-z-]*"};
   private String myName = "SimpleAnnotator";

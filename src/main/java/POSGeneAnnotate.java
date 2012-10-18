@@ -12,6 +12,16 @@ import org.apache.uima.resource.ResourceInitializationException;
 
 public class POSGeneAnnotate extends JCasAnnotator_ImplBase {
 
+  /*
+   * A Named Entity Annotator based on the POS Tag NER given with the scripts
+   * for Homework 1. 
+   * 
+   * Uses the Stanford NLP based POS tagger to identify the Nouns in the document.
+   * Use the start and end markers of the noun POS tags to label the NER offsets.
+   * 
+   * 
+   */
+  
   private String myName = "POSAnnotator";
   @Override
   public void process(JCas arg0) throws AnalysisEngineProcessException {
